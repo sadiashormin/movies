@@ -8,7 +8,7 @@ export class Header extends React.Component {
   render() {
     return(
       <header>
-        <Link to={'/'}><h1><img src={logo} alt="Moviee logo" /> Moviee</h1></Link>
+        <Link to={'/'}><h1><img src={logo} alt="Moviee logo" /> TE</h1></Link>
         <Nav />
       </header>
     );

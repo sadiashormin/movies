@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './newMovies.css';
-let json  = require('./movie_list.json');
+let json  = require('../data.json');
 export class NewMovies extends React.Component {
   constructor(props) {
     super(props);
@@ -18,12 +18,14 @@ export class NewMovies extends React.Component {
   render() {
     return(
       <section>
-        <h2>New releases</h2>
+        <h2>Most Popular</h2>
         <div className="newMovies">
           {this.state.movies.map((movie, index) => {
             return (
               <Link to={`/movie/${this.state.movies[index].id}`} key={index} className="movieLink">
-                <img src={this.state.movies[index].poster_path === null ? 'http://via.placeholder.com/640x960' : `https://image.tmdb.org/t/p/w640/${this.state.movies[index].poster_path}`} alt={`${this.state.movies.title} poster`} className="imgResponsive" />
+              
+             
+                <img src={this.state.movies[index].poster_path === null ? '../archive/640.png' : `../${this.state.movies[index].poster_path}`} alt={`${this.state.movies.title} poster`} className="imgResponsive" />
 
                 <div className="movieInfo">
                   <h3>{this.state.movies[index].title}</h3>

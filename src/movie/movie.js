@@ -4,8 +4,7 @@ import { Form } from '../form/form';
 import { Cast } from '../cast/cast';
 import './movie.css';
 import { Player, ControlBar } from 'video-react';
-import mp4 from '../movie/trailer_hd.mp4';
-let json  = require('../newMovies/movie_list.json');
+let json  = require('../data.json');
 
 export class Movie extends React.Component {
   constructor(props) {
@@ -48,7 +47,7 @@ export class Movie extends React.Component {
         <div className="moviePage">
           <Player className="movieVideo"
             playsInline
-            src={mp4}
+            src={'../'+ this.state.movie.video_path}
             autoPlay={true}
           />
         </div>
