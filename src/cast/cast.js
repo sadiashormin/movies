@@ -6,7 +6,7 @@ export class Cast extends React.Component {
     const link = '../';
     return(
       <div>
-        <h3>{this.props.cast && this.props.cast.length &&'Cast' }</h3>
+        <h3>{this.props.cast && this.props.cast.length && 'Cast' }</h3>
         <div className="figureContainer">
           {this.props.cast && this.props.cast.length>0 && this.props.cast.slice(0, 6).map((element, index) => {
             return(

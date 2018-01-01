@@ -25,7 +25,9 @@ export class Form extends React.Component {
     if (val === '') {
       document.getElementById('results').className = 'noDisplay';
     }
-    let results = data.results.filter(m=>m.title.toLowerCase().includes(val.toLowerCase()));
+    let results = data.results.filter(
+      m=>m.title.toLowerCase().includes(val.toLowerCase()) || m.credits.cast.filter(c=>c.name.toLowerCase().includes(val.toLowerCase())).length>0
+    );
     this.setState({ results });  
   }
 
