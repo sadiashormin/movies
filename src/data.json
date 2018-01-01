@@ -24,22 +24,22 @@
         }
     }, {
         "id": 2,
-        "title": "lkjljls",
-        "overview": "The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+        "title": "High Heel",
+        "overview": "High Heel",
         "original_language": "en",
         "popularity": 345.846123,
-        "poster_path": "archive/movies/jumanji/jumanji.jpg",
-        "video_path": "archive/movies/jumanji/jumanji.mp4",
+        "poster_path": "archive/natok/high heel/high heel.jpg",
+        "video_path": "archive/natok/high heel/high heel.mp4",
         "genres": [{
             "name": "Action"
         }],
         "credits": {
             "cast": [{
-                "name": "karim miya",
-                "profile_path": "archive/artists/dwayne johnson.jpg"
+                "name": "Mehazabien Chowdhury",
+                "profile_path": "archive/artists/Mehazabien Chowdhury.jpg"
             },{
-                "name": "rahim miya",
-                "profile_path": "archive/artists/dwayne johnson.jpg"
+                "name": "Jon Kabir",
+                "profile_path": "archive/artists/Jon Kabir.jpg"
             }]
         }
     }]
