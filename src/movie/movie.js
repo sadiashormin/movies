@@ -1,12 +1,12 @@
 import React from 'react';
-import {Header} from '../header/header';
-import {Form} from '../form/form';
-import {Cast} from '../cast/cast';
+import { Header } from '../header/header';
+import { Form } from '../form/form';
+import { Cast } from '../cast/cast';
 import './movie.css';
-import { Player, BigPlayButton,LoadingSpinner } from 'video-react';
+import { Player, ControlBar } from 'video-react';
 import mp4 from '../movie/trailer_hd.mp4';
 
-let json  = require('./movie_details.json');
+let json = require('./movie_details.json');
 
 export class Movie extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ export class Movie extends React.Component {
   }
 
   getData() {
-    let movie= json;
+    let movie = json;
     this.setState({ movie });
     // const key = 'f3e9f7d1677c7aa63c9ab526381eeceb';
     // const id = window.location.pathname.substring(7);
@@ -52,55 +52,41 @@ export class Movie extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.movie !== this.state.movie) {
+    if (nextProps.movie !== this.state.movie) {
       this.getData();
     }
   }
 
   render() {
-    return(
+    return (
       <div className="container">
         <Header />
         <Form id="form" />
-
         <div className="moviePage">
-          <div className="poster">
-            <Player
-                    autoPlay={true}
-                    playsInline
-                    poster="/assets/poster.png"
-                    src={mp4}>
-                <LoadingSpinner />
-                <BigPlayButton position="center" />
-              </Player>
-          </div>
-            
-          <div className="poster">
-            <img src={this.state.movie.poster_path === null ? 'http://via.placeholder.com/640x960' : `https://image.tmdb.org/t/p/w640${this.state.movie.poster_path}`} alt={`${this.state.movie.title} poster`} className="posterImg" />
-          </div>
-          
-          <section className="movieDetails">
+          <Player className="movieVideo"
+            playsInline
+            src={mp4}
+            autoPlay={true}
+          />
+        </div>
+        <Cast cast={this.state.movie.credits.cast} />
+        <div className="movieDetails">
             <h2 className="sectionTitle">{this.state.movie.title}</h2>
             <ul className="detailsList">
               <li><span className="bold">Release date:</span> {this.state.movie.release_date}</li>
               <li><span className="bold">Rating:</span> {this.state.movie.vote_average}</li>
               <li><span className="bold">Vote count:</span> {this.state.movie.vote_count}</li>
               <li><span className="bold">Genres: </span> {this.state.movie.genres.map((element, index) => {
-                  if (index < this.state.movie.genres.length - 1) {
-                    return this.state.movie.genres[index].name + ', '
-                  } else {
-                    return this.state.movie.genres[index].name
-                  }
-                })}
+                if (index < this.state.movie.genres.length - 1) {
+                  return this.state.movie.genres[index].name + ', '
+                } else {
+                  return this.state.movie.genres[index].name
+                }
+              })}
               </li>
             </ul>
-
             <p>{this.state.movie.overview}</p>
-          </section>
-          
-        </div>{/* moviePage */}
-
-        <Cast cast={this.state.movie.credits.cast} />
+          </div>
       </div>
     );
   }

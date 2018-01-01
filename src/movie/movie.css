@@ -7,7 +7,9 @@
 .movieDetails {
   order: 1;
 }
-
+.movieVideo {
+  flex: 1
+}
 .sectionTitle {
   margin: 0;
 }

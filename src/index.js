@@ -4,10 +4,9 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Home} from './home';
 import {Movie} from './movie/movie';
 import './index.css';
-
+import './movie/video-react.css'; 
 class App extends React.Component {
   render() {
-    console.log('Made by Luigi Benvenuti - http://www.luigibenvenuti.com/');
     return(
       <BrowserRouter>
         <Switch>
