@@ -15,7 +15,7 @@ export class Home extends React.Component {
   componentDidMount() {
     let movies = json.results;
     this.setState({ movies });
-    debugger;
+   
     let natokList = json.results.filter(m=>m.video_path.toLowerCase().includes("natok"));
     this.setState({ natokList });
   }
@@ -25,7 +25,7 @@ export class Home extends React.Component {
       <div className="container">
         <Header />
         <Form />
-        <h2 id="section1">Most Popular Natok</h2>
+        <h2 id="section1">Most Popular Natoks</h2>
         <Movies movies={this.state.movies}/>
         <h2 id="section2">Eid Natok</h2>
         <Movies movies={this.state.natokList}/>
