@@ -5,8 +5,7 @@ import { Cast } from '../cast/cast';
 import './movie.css';
 import { Player, ControlBar } from 'video-react';
 import mp4 from '../movie/trailer_hd.mp4';
-
-let json = require('./movie_details.json');
+let json  = require('../newMovies/movie_list.json');
 
 export class Movie extends React.Component {
   constructor(props) {
@@ -24,27 +23,11 @@ export class Movie extends React.Component {
   }
 
   getData() {
-    let movie = json;
+    const id = window.location.pathname.substring(7);
+    debugger;
+    let results = json.results.filter(m =>m.id == id);
+    let movie=results && results[0];
     this.setState({ movie });
-    // const key = 'f3e9f7d1677c7aa63c9ab526381eeceb';
-    // const id = window.location.pathname.substring(7);
-
-    // fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US&append_to_response=credits`)
-    //   .then(response => {
-    //     if (response.status !== 200) {
-    //       console.log('Error: ' + response.status);
-    //       return;
-    //     }
-
-    //     response.json().then(data => {
-    //       const movie = data;
-    //       this.setState({ movie });
-    //     });
-
-    //   })
-    //   .catch(err => {
-    //     console.log('Fetch Error :-S', err);
-    //   })
   }
 
   componentDidMount() {
@@ -73,9 +56,6 @@ export class Movie extends React.Component {
         <div className="movieDetails">
             <h2 className="sectionTitle">{this.state.movie.title}</h2>
             <ul className="detailsList">
-              <li><span className="bold">Release date:</span> {this.state.movie.release_date}</li>
-              <li><span className="bold">Rating:</span> {this.state.movie.vote_average}</li>
-              <li><span className="bold">Vote count:</span> {this.state.movie.vote_count}</li>
               <li><span className="bold">Genres: </span> {this.state.movie.genres.map((element, index) => {
                 if (index < this.state.movie.genres.length - 1) {
                   return this.state.movie.genres[index].name + ', '
