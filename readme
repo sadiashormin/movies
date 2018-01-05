@@ -1,0 +1,19 @@
+sudo apt-get install npm
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+To Deploy the site
+
+$npm run build
+it will create a folder “build”. Copy this folder inside TE
+The folder will look like, TE>build
+
+update npm
+	sudo npm install -g n
+	sudo n stable
+Install serve server
+	npm install -g serve
+	Go to folder TE ask serve to server build folder.
+	serve -s build
