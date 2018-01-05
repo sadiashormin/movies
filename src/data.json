@@ -15,11 +15,11 @@
         }],
         "credits": {
             "cast": [{
-                "name": "Dwayne Johnson",
-                "profile_path": "archive/artists/dwayne johnson.jpg"
+                "name": "Mehazabien Chowdhury",
+                "profile_path": "archive/artists/Mehazabien Chowdhury.jpg"
             },{
-                "name": "Dwayne Johnson",
-                "profile_path": "archive/artists/dwayne johnson.jpg"
+                "name": "Ziaul Faruq Apurba",
+                "profile_path": "archive/artists/Ziaul Faruq Apurba.jpg"
             }]
         }
     }, {
@@ -28,8 +28,8 @@
         "overview": "High Heel",
         "original_language": "en",
         "popularity": 345.846123,
-        "poster_path": "archive/natok/high heel/high heel.jpg",
-        "video_path": "archive/natok/high heel/high heel.mp4",
+        "poster_path": "archive/natok/bikal belar pakhi/bikal belar pakhi.jpg",
+        "video_path": "archive/natok/bikal belar pakhi/bikal belar pakhi.mp4",
         "genres": [{
             "name": "Action"
         }],
