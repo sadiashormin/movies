@@ -4,6 +4,7 @@ import { Form } from '../form/form';
 import { Cast } from '../cast/cast';
 import './movie.css';
 import { Player, ControlBar } from 'video-react';
+
 let json  = require('../data.json');
 
 export class Movie extends React.Component {
