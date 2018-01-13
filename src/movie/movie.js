@@ -25,7 +25,7 @@ export class Movie extends React.Component {
   getData() {
     
     const title = decodeURIComponent(window.location.pathname.substring(7));
-    debugger;
+  
     let results = json.results.filter(m =>m.title == title);
     let movie=results && results[0];
     this.setState({ movie });
