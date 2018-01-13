@@ -16,8 +16,8 @@ export class Home extends React.Component {
     let movies = json.results;
     this.setState({ movies });
    
-    let natokList = json.results.filter(m=>m.video_path.toLowerCase().includes("natok"));
-    this.setState({ natokList });
+    let shortFilms = json.results.filter(m=>m.video_path.toLowerCase().includes("/short/"));
+    this.setState({ shortFilms });
 
     let banglaMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/bangla/"));
     this.setState({ banglaMovies });
@@ -34,8 +34,8 @@ export class Home extends React.Component {
       <div className="container">
         <Header />
         <Form />
-        <h2 id="section1">Bangla Natoks</h2>
-        <Movies movies={this.state.natokList}/>
+        <h2 id="section1">Short Films</h2>
+        <Movies movies={this.state.shortFilms}/>
         <h2 id="section2">Bangla Movies </h2>
         <Movies movies={this.state.banglaMovies}/>
         <h2 id="section3">Hindi Movies </h2>
