@@ -23,9 +23,10 @@ export class Movie extends React.Component {
   }
 
   getData() {
-    const id = window.location.pathname.substring(7);
+    
+    const title = decodeURIComponent(window.location.pathname.substring(7));
     debugger;
-    let results = json.results.filter(m =>m.id == id);
+    let results = json.results.filter(m =>m.title == title);
     let movie=results && results[0];
     this.setState({ movie });
   }
@@ -55,7 +56,7 @@ export class Movie extends React.Component {
         <Cast cast={this.state.movie.credits.cast} />
         <div className="movieDetails">
             <h2 className="sectionTitle">{this.state.movie.title}</h2>
-            <ul className="detailsList">
+            {/* <ul className="detailsList">
               <li><span className="bold">Genres: </span> {this.state.movie.genres.map((element, index) => {
                 if (index < this.state.movie.genres.length - 1) {
                   return this.state.movie.genres[index].name + ', '
@@ -64,7 +65,7 @@ export class Movie extends React.Component {
                 }
               })}
               </li>
-            </ul>
+            </ul> */}
             <p>{this.state.movie.overview}</p>
           </div>
       </div>
