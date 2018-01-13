@@ -34,14 +34,13 @@ export class Home extends React.Component {
       <div className="container">
         <Header />
         <Form />
-        <h2 id="section1">Most Popular Natoks</h2>
+        <h2 id="section1">Bangla Natoks</h2>
         <Movies movies={this.state.natokList}/>
-        <h2 id="section3">Popular Bangla Movies </h2>
+        <h2 id="section2">Bangla Movies </h2>
         <Movies movies={this.state.banglaMovies}/>
-        <h2 id="section4">Popular Hindi Movies </h2>
+        <h2 id="section3">Hindi Movies </h2>
         <Movies movies={this.state.hindiMovies}/>
-
-        <h2 id="section4">Popular English Movies </h2>
+        <h2 id="section4">English Movies </h2>
         <Movies movies={this.state.englishMovies}/>
       </div>
     );
