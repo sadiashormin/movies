@@ -1,0 +1,29 @@
+->Documentation of the entire flows
+->Pushing the config file into git
+->Turn on SSH access into the box
+->Make image and store it somewhere safe.
+->Cleanup the data.json file and exclude the unused properties from there.
+
+
+Security enforcement:
+-> Possibilities
+    ->ssh te.sh
+          git clone git@mahbub.something.setup
+          build,
+          -dhcpd.conf
+          -interfaces
+          cp dhcpd.conf into the appropate place 
+          cp interface into the appropriate place
+          
+Request to Sadia's laptop or mobile with key( Mac id to generate a key )
+keys.te
+-------------hash_of_mac+ our key
+10000 * 5 
+50000
+
+
+50000 is divisible by 
+
+          
+          
+
