@@ -22,6 +22,9 @@ export class Home extends React.Component {
     let banglaMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/bangla/"));
     this.setState({ banglaMovies });
 
+    let banglaNatok = json.results.filter(m=>m.video_path.toLowerCase().includes("/natok/"));
+    this.setState({ banglaNatok });
+
     let hindiMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/hindi/"));
     this.setState({ hindiMovies });
 
@@ -38,10 +41,12 @@ export class Home extends React.Component {
         <Movies movies={this.state.shortFilms}/>
         <h2 id="section2">Bangla Movies </h2>
         <Movies movies={this.state.banglaMovies}/>
-        <h2 id="section3">Hindi Movies </h2>
+        <h2 id="section3">Bangla Natok </h2>
+        <Movies movies={this.state.banglaNatok}/>
+        {/* <h2 id="section4">Hindi Movies </h2>
         <Movies movies={this.state.hindiMovies}/>
         <h2 id="section4">English Movies </h2>
-        <Movies movies={this.state.englishMovies}/>
+        <Movies movies={this.state.englishMovies}/> */}
       </div>
     );
   }

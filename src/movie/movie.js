@@ -53,7 +53,7 @@ export class Movie extends React.Component {
             autoPlay={true}
           />
         </div>
-        <Cast cast={this.state.movie.credits.cast} />
+        {/* <Cast cast={this.state.movie.credits.cast} /> */}
         <div className="movieDetails">
             <h2 className="sectionTitle">{this.state.movie.title}</h2>
             {/* <ul className="detailsList">
