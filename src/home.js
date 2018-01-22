@@ -17,13 +17,13 @@ export class Home extends React.Component {
     let movies = json.results;
     this.setState({ movies });
    
-    let shortFilms = json.results.filter(m=>m.includes("/natok/")).slice(0,6);
+    let shortFilms = json.results.filter(m=>m.includes("/Short Films/")).slice(0,12);
     this.setState({ shortFilms });
 
-    let banglaMovies = json.results.filter(m=>m.includes("/natok/")).slice(0,2);
+    let banglaMovies = json.results.filter(m=>m.includes("/Bangla Movies/")).slice(0,12);
     this.setState({ banglaMovies });
 
-    let banglaNatok = json.results.filter(m=>m.includes("/natok/")).slice(0,2);
+    let banglaNatok = json.results.filter(m=>m.includes("/Bangla Natok/")).slice(0,12);
     this.setState({ banglaNatok });
   }
 
@@ -51,7 +51,7 @@ export class Home extends React.Component {
 
         <div>
           <span className="sectionHeader" id="section1">Bangla Natok</span>
-          <Link to={"/movies/natok"} className="seeAllLink">
+          <Link to={"/movies/Bangla Natok"} className="seeAllLink">
               SEE ALL
           </Link>
         </div>
