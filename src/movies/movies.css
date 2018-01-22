@@ -133,3 +133,16 @@ a.movieLink:hover::after {
   /* visibility: visible; */
 }
 
+.sectionHeader{
+  font-size: 1.5em;
+  font-weight: 800;
+  margin: 20px 0;
+  display: inline-block;
+}
+.seeAllLink {
+  float: right;
+  margin-right: 10px;
+  margin: 20px 0;
+  display: inline-block;
+}
+

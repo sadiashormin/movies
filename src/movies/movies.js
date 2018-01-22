@@ -11,6 +11,7 @@ export class Movies extends React.Component {
   render() {
     return(
       <section>
+        
        
         <div className="newMovies">
           {this.props.movies && this.props.movies.length>0 && this.props.movies.map((movie, index) => {
@@ -30,6 +31,7 @@ export class Movies extends React.Component {
             )
           })}
         </div>
+        
       </section>
     );
   }
