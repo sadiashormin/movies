@@ -26,7 +26,7 @@ export class Form extends React.Component {
       document.getElementById('results').className = 'noDisplay';
     }
     let results = data.results.filter(
-      m=>m.title.toLowerCase().includes(val.toLowerCase()) || m.credits.cast.filter(c=>c.name.toLowerCase().includes(val.toLowerCase())).length>0
+      m=>m.toLowerCase().split('/').pop().includes(val.toLowerCase())
     );
     this.setState({ results });  
   }
@@ -36,7 +36,7 @@ export class Form extends React.Component {
       <form onSubmit={this.handleSubmit} id="form">
         <img src={search} alt="search icon" className="searchIcon" />
         <input onKeyUp={this.handleKeyUp} id="searchInput" className="searchBar" type="text" placeholder="Search a movie" required />
-        <FormResults results={this.state.results} />
+        <FormResults movies={this.state.results} />
       </form>
     );
   }

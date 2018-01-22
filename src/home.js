@@ -17,20 +17,14 @@ export class Home extends React.Component {
     let movies = json.results;
     this.setState({ movies });
    
-    let shortFilms = json.results.filter(m=>m.video_path.toLowerCase().includes("/short/")).slice(0,12);
+    let shortFilms = json.results.filter(m=>m.includes("/natok/")).slice(0,6);
     this.setState({ shortFilms });
 
-    let banglaMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/bangla/")).slice(0,12);
+    let banglaMovies = json.results.filter(m=>m.includes("/natok/")).slice(0,2);
     this.setState({ banglaMovies });
 
-    let banglaNatok = json.results.filter(m=>m.video_path.toLowerCase().includes("/natok/")).slice(0,12);
+    let banglaNatok = json.results.filter(m=>m.includes("/natok/")).slice(0,2);
     this.setState({ banglaNatok });
-
-    // let hindiMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/hindi/")).slice(0,12);
-    // this.setState({ hindiMovies });
-
-    // let englishMovies = json.results.filter(m=>m.video_path.toLowerCase().includes("movies/english/")).slice(0,12);
-    // this.setState({ englishMovies });
   }
 
   render() {

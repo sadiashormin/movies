@@ -10,6 +10,7 @@ let json  = require('../data.json');
 export class Movie extends React.Component {
   constructor(props) {
     super(props);
+  
     this.state = {
       movie: {
         genres: [],
@@ -24,11 +25,12 @@ export class Movie extends React.Component {
 
   getData() {
     
-    const title = decodeURIComponent(window.location.pathname.substring(7));
-  
-    let results = json.results.filter(m =>m.title == title);
-    let movie=results && results[0];
-    this.setState({ movie });
+    const encodedPath = decodeURIComponent(window.location.pathname.substring(7));
+    let results = json.results.filter(m =>m.split('/').pop() == encodedPath);
+    let vsrc=results && results[0] +"/"+results[0].split('/').pop()+".mp4" ;
+    let title=results[0].split('/').pop();
+    this.setState({ vsrc });
+    this.setState({ title });
   }
 
   componentDidMount() {
@@ -49,7 +51,7 @@ export class Movie extends React.Component {
         <div className="moviePage">
           <Player className="movieVideo"
             playsInline
-            src={'../'+ this.state.movie.video_path}
+            src={'../'+ this.state.vsrc }
             autoPlay={true}
           />
         </div>

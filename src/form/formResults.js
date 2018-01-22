@@ -17,14 +17,14 @@ export class FormResults extends React.Component {
     const link = '../';
     return(
       <ul id="results" onClick={this.handleClick}>
-        {this.props.results.map((element, index) => {
+        {this.props.movies.map((element, index) => {
           return(
             <li key={index} onClick={this.handleClick}>
-              <Link to={`/movie/${encodeURIComponent(this.props.results[index].title)}`} >
-                <img src={this.props.results[index].poster_path === null ? '../archive/640.png' : `${link}${this.props.results[index].poster_path}`} alt={`${this.props.results[index].title} poster`} className="resultPoster" />
+              <Link to={`/movie/${this.props.movies[index].split('/').pop()}`} >
+                <img src={"../"+this.props.movies[index]+"/"+this.props.movies[index].split('/').pop()+".jpg" } alt={this.props.movies[index].split('/').pop()} className="resultPoster" />
                 <div>
-                  <p>{this.props.results[index].title}</p>
-                  <p>{this.props.results[index].release_date}</p>
+                  <p>{this.props.movies[index].split('/').pop()}</p>
+                  {/* <p>{this.props.results[index].release_date}</p> */}
                 </div>
               </Link>
             </li>

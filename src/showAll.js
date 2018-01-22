@@ -16,7 +16,7 @@ export class ShowAll extends React.Component {
 
   componentDidMount() {
     let data = json.results;
-    let all = data.filter(m=>m.video_path.toLowerCase().includes('/'+this.props.match.params.all));
+    let all = data.filter(m=>m.includes('/'+this.props.match.params.all));
     this.setState({ all });
   }
   render() {

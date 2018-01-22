@@ -16,8 +16,8 @@ export class Movies extends React.Component {
         <div className="newMovies">
           {this.props.movies && this.props.movies.length>0 && this.props.movies.map((movie, index) => {
             return (
-              <Link to={`/movie/${encodeURIComponent(this.props.movies[index].title)}`} key={index} className="movieLink">
-                <img src={this.props.movies[index].poster_path === null ? '../archive/640.png' : `../${this.props.movies[index].poster_path}`} alt={`${this.props.movies.title} poster`} className="imgResponsive" />
+              <Link to={`/movie/${this.props.movies[index].split('/').pop()}`} key={index} className="movieLink">
+                <img src={"../"+this.props.movies[index]+"/"+this.props.movies[index].split('/').pop()+".jpg" } alt={this.props.movies[index].split('/').pop()} className="imgResponsive" />
                 <div className="movieInfo">
                   <h3>{this.props.movies[index].title}</h3>
                   <p>{this.props.movies[index].release_date}</p>
